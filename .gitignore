@@ -1,2 +1,5 @@
 # Ignore files in C directory
 c/
+
+# Ignore PDF files
+*.pdf
