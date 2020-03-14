@@ -8,7 +8,7 @@ class Main():
     def get_args(cls):
         cls.parser = argparse.ArgumentParser(
             description="Encrypt plaintext using various ciphers. Provides functionality for Playfair, \
-                Row Transposition, Railfence, Vigenre, and Monoalphabetic Cipher."
+                Row Transposition, Railfence, Vigenere, and Monoalphabetic Cipher."
         )
         cls.parser.add_argument("<CIPHER NAME>", help="Name of cipher to use. One of `PLF`, `RTS`, `RFC`, `VIG`, `CES`, `MAC`.")
         cls.parser.add_argument("<KEY>", help="The encryption/decryption key to use.")
@@ -34,11 +34,11 @@ class Main():
         }
         ciphers = {
             "PLF": Playfair, 
-            "RTS": 1, 
-            "RFC": 2, 
-            "VIG": 3, 
-            "CES": 4, 
-            "MAC": 5
+            "RTS": RowTransposition, 
+            "RFC": Railfence, 
+            "VIG": Vigenere, 
+            "CES": Caesar, 
+            "MAC": Monoalphabetic
         }
         try:
             return ciphers[cipher_name](**cipher_arguments)
