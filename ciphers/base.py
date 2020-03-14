@@ -21,7 +21,7 @@ class CipherInterface(ABC):
         """
         try:
             with open(ifil, "r") as fp:
-                return fp.read().strip()
+                return fp.read().strip().upper()
         except FileNotFoundError as exc:
             raise CipherException(
                 "Input file `{}` deleted prior to file reading. <INPUT FILE> must be a local file path.".format(ifil)
