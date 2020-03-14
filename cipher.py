@@ -23,10 +23,14 @@ class Main():
         cipher_name = args["<CIPHER NAME>"]
         if not os.path.isfile(args["<INPUT FILE>"]):
             cls.parser.error("Invalid input file. <INPUT FILE> must be a local file path.")
+        if args["<ENC/DEC>"] != "ENC" and args["<ENC/DEC>"] != "DEC":
+            cls.parser.error("Invalid process command. <ENC/DEC> must be one of `ENC` or `DEC`, \
+                whether to encrypt or decrypt, respectively")
         cipher_arguments = {
             "key": args["<KEY>"],
             "ifil": args["<INPUT FILE>"],
             "ofil": args["<OUTPUT FILE>"],
+            "mode": args["<ENC/DEC>"],
         }
         ciphers = {
             "PLF": Playfair, 
@@ -44,9 +48,6 @@ class Main():
     @classmethod
     def main(cls):
         cipher = cls.process_args()
-        # cipher.encrypt()
-        # cipher.decrypt()
-
 
 
 if __name__ == "__main__":
