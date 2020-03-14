@@ -2,8 +2,8 @@ from .base import CipherInterface, CipherException
 
 
 class Playfair(CipherInterface):
-    def __init__(self, key=""):
-        super().__init__(key=key)
+    def __init__(self, key="", ifil="", ofil=""):
+        super().__init__(key=key, ifil=ifil, ofil=ofil)
 
     def setKey(self, key):
         """

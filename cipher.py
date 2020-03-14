@@ -1,5 +1,6 @@
 from ciphers import *
 import argparse
+import os
 
 
 class Main():
@@ -20,8 +21,12 @@ class Main():
     def process_args(cls):
         args = cls.get_args()
         cipher_name = args["<CIPHER NAME>"]
+        if not os.path.isfile(args["<INPUT FILE>"]):
+            cls.parser.error("Invalid input file. <INPUT FILE> must be a local file path.")
         cipher_arguments = {
             "key": args["<KEY>"],
+            "ifil": args["<INPUT FILE>"],
+            "ofil": args["<OUTPUT FILE>"],
         }
         ciphers = {
             "PLF": Playfair, 
