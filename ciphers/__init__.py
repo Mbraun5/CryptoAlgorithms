@@ -1,4 +1,4 @@
-from .base import *
+from .base import CipherException, CipherInterface
 from .Caesar import Caesar
 from .Monoalphabetic import Monoalphabetic
 from .Playfair import Playfair
