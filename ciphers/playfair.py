@@ -30,12 +30,13 @@ class Playfair(CipherInterface):
             if i == 5:
                 break
             if char not in self.charmap:
-                if char == "I":
-                    self.charmap["J"] = (i, j)
-                elif char == "J":
+                if char == "I" or char == "J":
                     self.charmap["I"] = (i, j)
-                self.matrix[i].append(char)
-                self.charmap[char] = (i, j)
+                    self.charmap["J"] = (i, j)
+                    self.matrix[i].append("I")
+                else:
+                    self.matrix[i].append(char)
+                    self.charmap[char] = (i, j)
                 j += 1
         
         alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -46,14 +47,15 @@ class Playfair(CipherInterface):
             if i == 5:
                 break
             if char not in self.charmap:
-                if char == "I":
-                    self.charmap["J"] = (i, j)
-                elif char == "J":
+                if char == "I" or char == "J":
                     self.charmap["I"] = (i, j)
-                self.matrix[i].append(char)
-                self.charmap[char] = (i, j)
+                    self.charmap["J"] = (i, j)
+                    self.matrix[i].append("I")
+                else:
+                    self.matrix[i].append(char)
+                    self.charmap[char] = (i, j)
                 j += 1
-        """ Print for debugging matrix
+        """
         for item in self.matrix:
             print(item)
         """
