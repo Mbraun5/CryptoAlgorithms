@@ -32,7 +32,7 @@ class Main():
             "ofil": args["<OUTPUT FILE>"],
             "mode": args["<ENC/DEC>"],
         }
-        cls.ciphers = {
+        ciphers = {
             "PLF": Playfair, 
             "RTS": RowTransposition, 
             "RFC": Railfence, 
@@ -41,13 +41,21 @@ class Main():
             "MAC": Monoalphabetic
         }
         try:
-            return cls.ciphers[cipher_name](**cipher_arguments)
+            return ciphers[cipher_name](**cipher_arguments)
         except KeyError:
             cls.parser.error("Invalid cipher name. <CIPHER NAME> must be one of `PLF`, `RTS`, `RFC`, `VIG`, `CES`, `MAC`.")
 
     @classmethod
     def test_integration(cls, cipher_name, key, ifil, ofil, mode):
-        return cls.ciphers[cipher_name](key=key, ifil=ifil, ofil=ofil, mode=mode)
+        ciphers = {
+            "PLF": Playfair, 
+            "RTS": RowTransposition, 
+            "RFC": Railfence, 
+            "VIG": Vigenere, 
+            "CES": Caesar, 
+            "MAC": Monoalphabetic
+        }
+        return ciphers[cipher_name](key=key, ifil=ifil, ofil=ofil, mode=mode)
 
     @classmethod
     def main(cls):
