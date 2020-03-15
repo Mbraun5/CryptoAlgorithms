@@ -33,7 +33,7 @@ class Playfair(CipherInterface):
                 if char == "I" or char == "J":
                     self.charmap["I"] = (i, j)
                     self.charmap["J"] = (i, j)
-                    self.matrix[i].append("I")
+                    self.matrix[i].append("J")
                 else:
                     self.matrix[i].append(char)
                     self.charmap[char] = (i, j)
