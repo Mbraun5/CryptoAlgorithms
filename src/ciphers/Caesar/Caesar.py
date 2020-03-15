@@ -1,7 +1,7 @@
-from .base import CipherInterface, CipherException
+from CipherInterface.CipherInterface import CipherInterface, CipherException
 
 
-class Monoalphabetic(CipherInterface):
+class Caesar(CipherInterface):
     def __init__(self, key="", ifil="", ofil="", mode=""):
         super().__init__(key=key, ifil=ifil, ofil=ofil)
         self.encrypt() if mode=="ENC" else self.decrypt()

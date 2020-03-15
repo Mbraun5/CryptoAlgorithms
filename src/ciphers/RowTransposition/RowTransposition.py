@@ -1,4 +1,4 @@
-from .base import CipherInterface, CipherException
+from CipherInterface.CipherInterface import CipherInterface, CipherException
 import math
 
 

@@ -1,7 +1,8 @@
-from ciphers import *
 import argparse
+import sys
 import os
-
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
+from ciphers import *
 
 class Main():
     @classmethod

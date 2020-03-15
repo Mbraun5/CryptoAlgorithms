@@ -2,13 +2,13 @@ import unittest
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
-from cipher import Main
+from src.main.cipher import Main
 import filecmp
 
 
 class TestAlgorithms(unittest.TestCase):
     def test_playfair(self):
-        testdir = "./tests/Playfair"
+        testdir = "Playfair"
         for file in os.listdir(testdir):
             with self.subTest(file=file):
                 if file.startswith("dec_"):
