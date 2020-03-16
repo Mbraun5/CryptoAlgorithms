@@ -8,6 +8,12 @@ class RowTransposition(CipherInterface):
         self.encrypt() if mode=="ENC" else self.decrypt()
         self.write_output()
 
+    def check_nums(self):
+        res = 0
+        for digit in self.key:
+            res += digit
+        return res == int(len(self.key) * (len(self.key)+1) / 2)
+
     def setKey(self, key):
         """
         Sets the key to use for the cipher
@@ -15,10 +21,17 @@ class RowTransposition(CipherInterface):
         :param str key: The key to use
         :return: True if key is valid, False otherwise
         """
-        if not key.isdigit():
+        if " " in key:
+            self.key = key.split(" ")
+            for digit in self.key:
+                if not digit.isdigit():
+                    return False
+            self.key = [int(c) for c in self.key]
+            return self.check_nums()
+        elif not key.isdigit():
             return False
         self.key = [int(c) for c in key]
-        return True
+        return self.check_nums()
 
     def encrypt(self):
         """
@@ -26,7 +39,7 @@ class RowTransposition(CipherInterface):
         """
         siz = len(self.key)
         matrix = []
-        for i in range(siz):
+        for _ in range(siz):
             matrix.append("")
         for idx, char in enumerate(self.itxt):
             matrix[idx % siz] += char
@@ -65,4 +78,5 @@ class RowTransposition(CipherInterface):
 
     def key_exception(self, key):
         raise CipherException("Invalid key: {}. Row Transposition cipher key must be a string of integers ".format(key)\
-            + "such as '145294' where each value indicates the row transpositions")
+            + "such as '145236' or '1 4 5 2 3 6', where each value indicates the row transpositions. Also, the key must"\
+            + " contain all integer values from 1-n, where n is the largest integer in the string with no duplicates.")
