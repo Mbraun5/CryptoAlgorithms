@@ -7,9 +7,9 @@ class CipherException(Exception):
 
 class CipherInterface(ABC):
     def __init__(self, key="", ifil="", ofil=""):
+        self.itxt = self.read_input(ifil)
         if not self.setKey(key):
             self.key_exception(key)
-        self.itxt = self.read_input(ifil)
         self.ofil = ofil
     
     def read_input(self, ifil):
