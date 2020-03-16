@@ -11,13 +11,13 @@ class Main():
             description="Encrypt plaintext using various ciphers. Provides functionality for Playfair, \
                 Row Transposition, Railfence, Vigenere, and Monoalphabetic Cipher."
         )
-        cls.parser.add_argument("<CIPHER NAME>", help="Name of cipher to use. One of `PLF`, `RTS`, `RFC`, `VIG`, `CES`, `MAC`.")
-        cls.parser.add_argument("<KEY>", help="The encryption/decryption key to use.")
-        cls.parser.add_argument("<ENC/DEC>", help="One of `ENC` or `DEC`: whether to encrypt or decrypt, respectively.")
-        cls.parser.add_argument("<INPUT FILE>", help="The file from which to read the input.")
-        cls.parser.add_argument("<OUTPUT FILE>", help="The file to which the output should be written.")
+        cls.parser.add_argument("<CIPHER NAME>", help="Name of cipher to use. One of `PLF`, `RTS`, `RFC`, `VIG`, `CES`, `MAC`.", type=str)
+        cls.parser.add_argument("<KEY>", help="The encryption/decryption key to use.", type=str)
+        cls.parser.add_argument("<ENC/DEC>", help="One of `ENC` or `DEC`: whether to encrypt or decrypt, respectively.", type=str)
+        cls.parser.add_argument("<INPUT FILE>", help="The file from which to read the input.", type=str)
+        cls.parser.add_argument("<OUTPUT FILE>", help="The file to which the output should be written.", type=str)
         return vars(cls.parser.parse_args())
-    
+        
     @classmethod
     def process_args(cls):
         args = cls.get_args()
