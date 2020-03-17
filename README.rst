@@ -194,3 +194,21 @@ Key:
 
 Key Becomes:
     AEIQZADXCJABCAEIQZADX
+
+Hill
+--------
+**THIS IS ONLY PARTIALLY IMPLEMENTED. AS OF RIGHT NOW ONLY THE ENCRYPTION IS IMPLEMENTED**
+*<CIPHER TAG>* - **HIL**
+
+*<KEY>* - A string containing only numbers. The string must contain a perfect square number of integers to generate a NxN matrix for this Cipher.
+
+Sample command:
+    python cipher.py *HIL "6 24 1 13 16 10 20 17 15" ENC ./input.txt ./output.txt*
+
+Key Becomes:
+
+=====  =====  ======
+  6      24      1
+ 13      16     10
+ 20      17     15
+=====  =====  ======
