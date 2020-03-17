@@ -19,6 +19,6 @@ bin: $(BIN_FILE)
 	@echo "----------------------------------------------------"
 
 clean: $(CLEAN_FILE)
-	rm -f ./cipher.sh
-	bash $(CLEAN_FILE)
+	@rm -f ./cipher.sh
+	@bash $(CLEAN_FILE)
 	@echo "Cleaned working directory."
