@@ -19,6 +19,7 @@ bin: $(BIN_FILE)
 	@echo "----------------------------------------------------"
 
 clean: $(CLEAN_FILE)
-	rm ./$(BIN_FILE)
+	ifeq ($(wildcard $(BIN_FILE),)
+		rm ./$(BIN_FILE)
 	bash $(CLEAN_FILE)
 	@echo "Cleaned working directory."
