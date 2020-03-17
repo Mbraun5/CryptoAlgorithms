@@ -14,21 +14,29 @@ class Caesar(CipherInterface):
         :param str key: The key to use
         :return: True if key is valid, False otherwise
         """
-        pass
+        if not key.isdigit():
+            return False
+        self.key = int(key) % 26
+        return True
 
     def encrypt(self):
         """
         Encrypt the plaintext.
         """
-        pass
+        self.otxt = ""
+        for char in self.itxt:
+            self.otxt += chr(((ord(char) - ord('A') + self.key) % 26) + ord('A'))
 
     def decrypt(self):
         """
         Decrypt the ciphertext.
         """
-        pass
+        self.otxt = ""
+        for char in self.itxt:
+            if ord(char) - ord('A') - self.key >= 0:
+                self.otxt += chr(ord(char) - ord('A') - self.key + ord('A'))
+            else:
+                self.otxt += chr(ord(char) - ord('A') - self.key + ord('A') + 26)
 
     def key_exception(self, key):
-        # Add custom exception.
-        # raise CipherException("")
-        pass
+        raise CipherException("Invalid key: {}. Caesar cipher key must be a single integer value such as `343`".format(key))
