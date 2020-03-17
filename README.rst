@@ -19,11 +19,24 @@ CryptoAlgorithms is a python package that incorporates some of the most common e
     :target: https://github.com/Mbraun5/CryptoAlgorithms/blob/master/LICENSE
     :alt: GPL V3 License
 
-Installing
-----------
-
 Executing Main Program
-----------------------
+======================
+Using Makefile/Bash Script
+--------------------------
+Prerequisite: The desired input file must be in the **root** directory. ``Default: CryptoAlgorithms/``
+
+Execute::
+
+$ make bin
+$ ./cipher.sh *<CIPHER TAG> <KEY> <ENC/DEC> <INPUT FILE> <OUTPUT FILE>*
+
+Further instructions for the Cipher tags and corresponding keys is included below. `ENC` if you would like to encrypt
+the input file. `DEC` if you would like to decrypt the input file.
+
+Executing Directly Using Python3
+--------------------------------
+Prerequisite: The desired input file must be in the **src/main** directory.
+
 First, navigate to the ``src/main`` directory.
 
 Execute:
