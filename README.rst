@@ -7,7 +7,7 @@ CryptoAlgorithms is a python package that incorporates some of the most common e
 * `Github Repo <https://github.com/Mbraun5/CryptoAlgorithms>`_: The repository where the most up to date version
   of this code lives.
 
-|docs| |travis|
+|docs| |travis| |license|
 
 .. |docs| image:: https://img.shields.io/badge/docs-latest-success.svg
     :target: https://github.com/Mbraun5/CryptoAlgorithms/blob/master/README.rst
@@ -15,6 +15,9 @@ CryptoAlgorithms is a python package that incorporates some of the most common e
 .. |travis| image:: https://travis-ci.com/Mbraun5/CryptoAlgorithms.svg?token=RMkgUwFNoBVqHzT8NcEc&branch=master
     :target: https://travis-ci.com/Mbraun5/CryptoAlgorithms
     :alt: Build Status
+.. |license| image:: https://img.shields.io/badge/license-GPL3-blue.svg
+    :target: https://github.com/Mbraun5/CryptoAlgorithms/blob/master/LICENSE
+    :alt: GPL V3 License
 
 Installing
 ----------
