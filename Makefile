@@ -21,5 +21,6 @@ bin: $(BIN_FILE)
 clean: $(CLEAN_FILE)
 	ifeq ($(wildcard $(BIN_FILE),)
 		rm ./$(BIN_FILE)
+	endif
 	bash $(CLEAN_FILE)
 	@echo "Cleaned working directory."
