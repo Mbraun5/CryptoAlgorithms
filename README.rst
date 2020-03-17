@@ -2,7 +2,8 @@
 CryptoAlgorithms
 ==============================================
 
-CryptoAlgorithms is a python package that incorporates some of the most common entry-level ciphers.
+CryptoAlgorithms is a python package that incorporates some of the most common entry-level ciphers. This package
+only works using any version of **Python 3**
 
 * `Github Repo <https://github.com/Mbraun5/CryptoAlgorithms>`_: The repository where the most up to date version
   of this code lives.
