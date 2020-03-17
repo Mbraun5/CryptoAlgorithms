@@ -36,7 +36,12 @@ class Vigenere(CipherInterface):
         """
         Decrypt the ciphertext.
         """
-        pass
+        self.otxt = ""
+        for idx, char in enumerate(self.itxt):
+            if ord(char) - ord(self.key[idx]) >= 0:
+                self.otxt += chr(ord(char) - ord(self.key[idx]) + ord('A'))
+            else:
+                self.otxt += chr(26 + ord(char) - ord(self.key[idx]) + ord('A'))
 
     def key_exception(self, key):
         raise CipherException("Invalid key: {}. Vigenere cipher key must be a string only containing characters".format(key))
