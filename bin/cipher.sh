@@ -1,2 +1,2 @@
 #!/bin/bash
-python src/main/cipher.py "$@"
+python3 src/main/cipher.py "$@"
