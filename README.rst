@@ -198,6 +198,7 @@ Key Becomes:
 Hill
 --------
 **THIS IS ONLY PARTIALLY IMPLEMENTED. AS OF RIGHT NOW ONLY THE ENCRYPTION IS IMPLEMENTED**
+
 *<CIPHER TAG>* - **HIL**
 
 *<KEY>* - A string containing only numbers. The string must contain a perfect square number of integers to generate a NxN matrix for this Cipher.
