@@ -15,7 +15,8 @@ help:
 bin: $(BIN_FILE)
 	cp $(BIN_FILE) ./
 	@echo "----------------------------------------------------"
-	@echo "BINARY FILE READY TO EXECUTE: RUN ./cipher.sh"
+	@echo "BINARY FILE READY TO EXECUTE: "
+	@echo "		RUN ./cipher.sh"
 	@echo "----------------------------------------------------"
 
 clean: $(CLEAN_FILE)
